@@ -13,8 +13,7 @@ namespace ProjetMMoMrBraux
         protected int force { get;  set; }
         protected int mana { get; set; }
         protected Sac[] mesSac { get;  set; }
-
-
+  
         public Personnage()
         {
             int nms = getNbSacMax();
@@ -23,13 +22,16 @@ namespace ProjetMMoMrBraux
             {
                 mesSac[1] = new Sac();
             }
-
         }
 
-
+        public void retirerItem(int sac, Objets nomObjet)
+        {
+            mesSac[sac].retirerItem(nomObjet);
+        }
 
         public void ajouterItem(int sac, Objets nomObjet)
         {
+   
             mesSac[sac].ajouterItem(nomObjet);
         }
         public void afficherSac(int sac)
@@ -38,7 +40,8 @@ namespace ProjetMMoMrBraux
         }
         public abstract void Displays();
         public abstract int getNbSacMax();
-      //  public abstract int getMaxForce();
+  
+        //  public abstract int getMaxForce();
 
     }
 

@@ -6,6 +6,15 @@ namespace ProjetMMoMrBraux
 {
     class Tournois
     {
-   
+       public void accepterTournoiArme(IAttaquantArme un, IAttaquantArme deux)
+        {
+
+        }
+      public void  accepterTournoiMagie(IAttaquantMagie un, IAttaquantMagie deux)
+        {
+
+        }
+
+
     }
 }

@@ -99,30 +99,50 @@ namespace ProjetMMoMrBraux
             {
                 Console.WriteLine(" 1: Ajouter un item dans un sac \n" +
                     " 2: Afficher vos sac \n" +
-                    " 3: Afficher ses states \n");
+                    " 3: Afficher ses states \n",
+                    " 4: Afficher ses states \n");
                 string Choix1 = Console.ReadLine();
 
                 switch (Choix1)
                 {
                     case "1":
                         Console.Clear();
-                        Console.WriteLine("Dans quel sac voulez-vous placer l'item");
+                        Console.WriteLine("Dans quel sac voulez-vous placer l'item, Nombre de sac entre 1 et " + Joueur.getNbSacMax());
                         string sac = Console.ReadLine();
-
+                    
                         Console.WriteLine("Qu'elle item voulez-vous placer dans votre sac " + sac);
                         string nomObjet = Console.ReadLine();
-                
-                        Joueur.ajouterItem(Convert.ToInt32(sac), new Objets(nomObjet));
-                        break;
+               
+                        Joueur.ajouterItem(Convert.ToInt32(sac), new Objets(nomObjet,10));
 
-                    case "2":
-                
+                        Console.WriteLine("Voulez-vous ajouter un autre item dans le meme sac ? (oui ou non)");
+                        string Choix5 = Console.ReadLine();
+                       while (Choix5 == "oui")
+                        {
+                            Console.WriteLine("Qu'elle item voulez-vous placer dans votre sac " + sac);
+                            nomObjet = Console.ReadLine();
+                            Joueur.ajouterItem(Convert.ToInt32(sac), new Objets(nomObjet, 10));
+
+                            Console.WriteLine("Voulez-vous ajouter un autre item dans le meme sac "+sac+" ? (oui ou non)");
+                            Choix5 = Console.ReadLine();
+                        }
+                           break;
+
+                    case "2":     
                             Console.Clear();
-                            Console.WriteLine("Dans quel sac voulez-vous prendre l'item");
+                            Console.WriteLine("Dans quel sac voulez-vous prendre l'item, Nombre de sac entre 1 et " + Joueur.getNbSacMax());
                             sac = Console.ReadLine();                 
                                 Joueur.afficherSac(Convert.ToInt32(sac));              
                         break;
                     case "3":
+                        Console.WriteLine("Dans quel sac voulez-vous retirer l'item, Nombre de sac entre 1 et " + Joueur.getNbSacMax());
+                        sac = Console.ReadLine();
+                        Console.WriteLine("veuillez renseigner le nom de l'item que vous souhaitez retirer du sac numréro " + sac);
+                        Joueur.afficherSac(Convert.ToInt32(sac));
+                        string Remove = Console.ReadLine();
+                        Joueur.retirerItem(Convert.ToInt32(sac), new Objets(Remove, 10));
+                        break;
+                    case "4":
                         Console.WriteLine("Voulez-vous afficher vos states ? (oui ou non)");
                         string Choix4 = Console.ReadLine();
                         if (Choix4 == "oui")
@@ -131,6 +151,7 @@ namespace ProjetMMoMrBraux
                             Joueur.Displays();
                         }
                         break;
+
                     default:
                         Console.WriteLine("Il n'existe pas d'autre menu \n");
                         game = false;

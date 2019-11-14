@@ -7,19 +7,19 @@ namespace ProjetMMoMrBraux
     class Objets
     {
         private string nom;
-        //private string poids { get; set; }
+        private int poids;
 
-
-        public Objets(string nom/*, int poids*/)
+        
+        public Objets(string nom, int poids)
         {
+            Random rand = new Random();
+            poids = rand.Next(poids / 2, poids);
             this.nom = nom;
-         //   Random rand = new Random();
-         //   poids = rand.Next(poids / 2, poids);
-         //   this.poids = poids;
+            this.poids = poids;            
         }
         public void afficherObjets()
         {
-            Console.WriteLine("Nom : " + this.nom /*+ " / poid : " + this.poids*/);
+            Console.WriteLine("Nom : " + this.nom + " / poid : " + this.poids);
         }
 
     }
