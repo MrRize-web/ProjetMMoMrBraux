@@ -12,11 +12,12 @@ namespace ProjetMMoMrBraux
         public override int getNbSacMax() { return 3; }
         public override void Displays()
         {
-            Console.WriteLine("Classe : Rogue");
-            Console.WriteLine("HP : " + this.hpv);
-            Console.WriteLine("Agilité :" + this.agilite);
-            Console.WriteLine("Force : " + this.force);
-        
+            Console.WriteLine("|--------Statistique----------|");
+            Console.WriteLine(" -->  Classe  : Rogue");
+            Console.WriteLine(" -->  HP      : " + this.hpv);
+            Console.WriteLine(" -->  Agilité : " + this.agilite);
+            Console.WriteLine(" -->  Force   : " + this.force);
+            Console.WriteLine("|-----------------------------|" + "\n");
         }
         public Rogue(/*string name*/)
         {

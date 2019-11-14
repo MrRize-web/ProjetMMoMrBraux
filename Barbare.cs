@@ -24,11 +24,14 @@ namespace ProjetMMoMrBraux
 
         public override void Displays()
         {
-          //  Console.WriteLine("Nom : " + this.nom);
-            Console.WriteLine("Classe : Barbare");
-            Console.WriteLine("HP : " + this.hpv);
-            Console.WriteLine("Agilité :" + this.agilite);
-            Console.WriteLine("Force : " + this.force);
+
+            //  Console.WriteLine("Nom : " + this.nom);
+            Console.WriteLine("|--------Statistique----------|");
+            Console.WriteLine(" -->  Classe   : Barbare");
+            Console.WriteLine(" -->  HP       : " + this.hpv);
+            Console.WriteLine(" -->  Agilité  : " + this.agilite);
+            Console.WriteLine(" -->  Force    : " + this.force);
+            Console.WriteLine("|-----------------------------|" + "\n");
         }
         /*
         public void attaque(Barbare deux)

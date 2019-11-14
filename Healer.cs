@@ -14,9 +14,12 @@ namespace ProjetMMoMrBraux
 
         public override  void Displays()
         {
-            Console.WriteLine("HP : " + this.hpv);
-            Console.WriteLine("Agilité :" + this.agilite);
-            Console.WriteLine("Force : " + this.force);
+            Console.WriteLine("|--------Statistique----------|");
+            Console.WriteLine(" -->  Classe   : Healer");
+            Console.WriteLine(" -->  HP       : " + this.hpv);
+            Console.WriteLine(" -->  Agilité  : " + this.agilite);
+            Console.WriteLine(" -->  Force    : " + this.force);
+            Console.WriteLine("|-----------------------------|" + "\n");
         }
         public Healer(/*string name*/)
         {

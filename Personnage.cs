@@ -20,7 +20,8 @@ namespace ProjetMMoMrBraux
             this.mesSac = new Sac[nms];
             for (int i = 0; i < nms; i++)
             {
-                mesSac[1] = new Sac();
+             
+                mesSac[i] = new Sac();
             }
         }
 
@@ -40,7 +41,15 @@ namespace ProjetMMoMrBraux
         }
         public abstract void Displays();
         public abstract int getNbSacMax();
-  
+
+        public void accepterTournoiArme(IAttaquantArme un, IAttaquantArme deux)
+        {
+
+        }
+        public void accepterTournoiMagie(IAttaquantArme un, IAttaquantArme deux)
+        {
+
+        }
         //  public abstract int getMaxForce();
 
     }

@@ -19,7 +19,7 @@ namespace ProjetMMoMrBraux
         }
         public void afficherObjets()
         {
-            Console.WriteLine("Nom : " + this.nom + " / poid : " + this.poids);
+            Console.WriteLine("Nom : " + this.nom + " avec pour poid : " + this.poids+"pods");
         }
 
     }

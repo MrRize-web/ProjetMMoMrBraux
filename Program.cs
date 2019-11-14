@@ -86,30 +86,43 @@ namespace ProjetMMoMrBraux
                 if (nom != null || nom == "")
                 {
                     Console.Clear();
-                    Console.WriteLine("(Barbare = 1, Rogue = 2, Mage = 3, Healer = 4)");
-                    Console.WriteLine(" Nom : " + nom);                 
+                    Console.WriteLine("|--------Personnage----------|" + "\n");
+                    Console.WriteLine(" -->  Nom      : " + nom + "\n");
                     Joueur.Displays();
-                    Console.WriteLine("Nombre de sac max : " + Joueur.getNbSacMax());
+                    int sacMax = Joueur.getNbSacMax();
+                    sacMax--;
+                    Console.WriteLine("Nombre de sac max : " + sacMax+ "\n");
+                    Console.WriteLine("Le premier sac est le sac 0 et le dernier est le sac " + sacMax + "\n");
                 }
                 game = false;
             }
 
             game = true;
             while (game == true)
-            {
-                Console.WriteLine(" 1: Ajouter un item dans un sac \n" +
-                    " 2: Afficher vos sac \n" +
-                    " 3: Afficher ses states \n",
-                    " 4: Afficher ses states \n");
+            {   
+                Console.WriteLine("|--------MENU PRINCIPAL----------|\n"+
+                                  "|-1: Ajouter un item dans un sac-|\n" +
+                                  "|-2: Afficher vos sac------------|\n" +
+                                  "|-3: Retirer un item dans un sac-|\n" +
+                                  "|-4: Afficher ses states---------|\n" +
+                                  "|--------------------------------|" + "\n");
+           
                 string Choix1 = Console.ReadLine();
-
+                int sacMax = Joueur.getNbSacMax();
+                sacMax--;
                 switch (Choix1)
                 {
                     case "1":
                         Console.Clear();
-                        Console.WriteLine("Dans quel sac voulez-vous placer l'item, Nombre de sac entre 1 et " + Joueur.getNbSacMax());
+                        Console.WriteLine("Dans quel sac voulez-vous placer l'item, Nombre de sac entre 0 et " + sacMax);
                         string sac = Console.ReadLine();
-                    
+                 
+                            while (Convert.ToInt32(sac) > sacMax)
+                            {
+                                Console.WriteLine("Veuillez entrer un sac compris entre 0 et "+ sacMax);
+                                sac = Console.ReadLine();
+                            }
+                        
                         Console.WriteLine("Qu'elle item voulez-vous placer dans votre sac " + sac);
                         string nomObjet = Console.ReadLine();
                
@@ -121,34 +134,53 @@ namespace ProjetMMoMrBraux
                         {
                             Console.WriteLine("Qu'elle item voulez-vous placer dans votre sac " + sac);
                             nomObjet = Console.ReadLine();
-                            Joueur.ajouterItem(Convert.ToInt32(sac), new Objets(nomObjet, 10));
-
-                            Console.WriteLine("Voulez-vous ajouter un autre item dans le meme sac "+sac+" ? (oui ou non)");
+                            int i = 1;
+                            Joueur.ajouterItem(Convert.ToInt32(sac), new Objets(nomObjet,100));
+                            i++;                                 
+                            if (i >= 5)
+                            {
+                                Console.WriteLine("Votre sac est complet ! Veuillez selectionner un nouveaux sac :");
+                                break;
+                            }
+                            else
+                                Console.WriteLine("Voulez-vous ajouter un autre item dans le meme sac "+sac+" ? (oui ou non)");
                             Choix5 = Console.ReadLine();
+                          
                         }
                            break;
 
                     case "2":     
                             Console.Clear();
                             Console.WriteLine("Dans quel sac voulez-vous prendre l'item, Nombre de sac entre 1 et " + Joueur.getNbSacMax());
-                            sac = Console.ReadLine();                 
-                                Joueur.afficherSac(Convert.ToInt32(sac));              
+                            sac = Console.ReadLine();
+                        Console.Clear();
+                        Console.WriteLine("La liste de vos items dans le sac "+sac);
+                        Joueur.afficherSac(Convert.ToInt32(sac));              
                         break;
                     case "3":
                         Console.WriteLine("Dans quel sac voulez-vous retirer l'item, Nombre de sac entre 1 et " + Joueur.getNbSacMax());
                         sac = Console.ReadLine();
-                        Console.WriteLine("veuillez renseigner le nom de l'item que vous souhaitez retirer du sac numréro " + sac);
+                        Console.WriteLine("veuillez renseigner le nom de l'item que vous souhaitez retirer du sac numréro " + sac+" :");
                         Joueur.afficherSac(Convert.ToInt32(sac));
                         string Remove = Console.ReadLine();
-                        Joueur.retirerItem(Convert.ToInt32(sac), new Objets(Remove, 10));
+                        Joueur.retirerItem(Convert.ToInt32(sac), new Objets(Remove, 100));
                         break;
                     case "4":
-                        Console.WriteLine("Voulez-vous afficher vos states ? (oui ou non)");
+                        Console.WriteLine("Voulez-vous afficher vos states ? (oui ou non)" + "\n");
                         string Choix4 = Console.ReadLine();
                         if (Choix4 == "oui")
                         {
-                            Console.Clear();           
+                            Console.Clear();
                             Joueur.Displays();
+                        }
+                        break;
+                    case "5":
+                        Console.WriteLine("Voulez-vous rejoindre un Tournois (oui ou non)");
+                        string Choix6 = Console.ReadLine();
+                        if (Choix6 == "oui")
+                        {
+                            Console.Clear();
+                           /* Joueur.accepterTournoiArme(IAttaquantArme, IAttaquantArme);*/
                         }
                         break;
 
