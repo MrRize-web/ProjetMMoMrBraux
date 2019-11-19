@@ -26,6 +26,14 @@ namespace ProjetMMoMrBraux
             this.agilite = Statrandom.Next(1, agiliteM);
             this.force = Statrandom.Next(1, forceM);
         }
+        /*   public override int attaqueSpecial(Personnage p)
+           {
+
+           }*/
+        public override void afficherTeam()
+        {
+            Console.WriteLine("|--------Equipe----------|");
+        }
     }
 
 }

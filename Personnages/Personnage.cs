@@ -42,6 +42,16 @@ namespace ProjetMMoMrBraux
         public abstract void Displays();
         public abstract int getNbSacMax();
 
+        public bool countObjets(int sac)
+        {  
+            if (mesSac[sac].count() == true)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public abstract void afficherTeam();
         public void accepterTournoiArme(IAttaquantArme un, IAttaquantArme deux)
         {
 
@@ -51,7 +61,10 @@ namespace ProjetMMoMrBraux
 
         }
         //  public abstract int getMaxForce();
+     /*   public async ok Attaque(Personnage autre)
+        {
 
+        }*/
     }
 
 }

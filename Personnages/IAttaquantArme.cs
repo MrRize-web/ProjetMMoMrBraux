@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-    class team
+    class IAttaquantArme : IAttaquant
     {
-
+       //Arme.getarme:
     }
 }

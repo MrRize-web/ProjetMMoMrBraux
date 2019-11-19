@@ -40,6 +40,9 @@ namespace ProjetMMoMrBraux
             Console.WriteLine(deux.nom + "prend" + degats + "Pdv");
             deux.SethpvM((deux.GetHpvM) - degats);
         }*/
-
+        public override void afficherTeam()
+        {
+            Console.WriteLine("|--------Equipe----------|");
+        }
     }
 }
