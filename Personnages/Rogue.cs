@@ -30,6 +30,13 @@ namespace ProjetMMoMrBraux
            {
 
            }*/
+       /* public void attaque(Rogue deux)
+        {
+            Random rand = new Random();
+            int degats = (rand.Next(10) + forceM) / 3;
+            Console.WriteLine(deux.nom + "prend" + degats + "Pdv");
+            deux.SethpvM((deux.GetHpvM) - degats);
+        }*/
         public override void afficherTeam()
         {
             Console.WriteLine("|--------Equipe----------|");

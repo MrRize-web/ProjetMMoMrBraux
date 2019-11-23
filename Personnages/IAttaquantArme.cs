@@ -6,6 +6,10 @@ namespace ProjetMMoMrBraux
 {
     class IAttaquantArme : IAttaquant
     {
-       //Arme.getarme:
+    public void attaqueArme()
+        {
+
+        }
+   
     }
 }

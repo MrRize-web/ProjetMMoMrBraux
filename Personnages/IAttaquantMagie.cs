@@ -6,5 +6,10 @@ namespace ProjetMMoMrBraux
 {
     class IAttaquantMagie : IAttaquant
     {
+        public void attaqueMagie()
+        {
+
+        }
+
     }
 }

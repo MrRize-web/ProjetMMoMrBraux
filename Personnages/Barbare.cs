@@ -33,10 +33,11 @@ namespace ProjetMMoMrBraux
             Console.WriteLine(" -->  Force    : " + this.force);
             Console.WriteLine("|-----------------------------|" + "\n");
         }
-        /*
-        public void attaque(Barbare deux)
+        
+     /*   public void attaque(Barbare deux)
         {
-            int degats = (Random.Next(10) + forceM) / 3;
+            Random rand = new Random();
+            int degats = (rand.Next(10) + forceM) / 3;
             Console.WriteLine(deux.nom + "prend" + degats + "Pdv");
             deux.SethpvM((deux.GetHpvM) - degats);
         }*/
