@@ -61,10 +61,19 @@ namespace ProjetMMoMrBraux
 
         }
         //  public abstract int getMaxForce();
-     /*   public async ok Attaque(Personnage autre)
+        public void SethpvM(int deg)
         {
+            this.hpv = deg;
+        }
+        public int GetHpvM(int hpvM)
+        {
+            this.hpv = hpvM;
+            return hpvM;
+        }
+        /*   public async ok Attaque(Personnage autre)
+           {
 
-        }*/
+           }*/
     }
 
 }

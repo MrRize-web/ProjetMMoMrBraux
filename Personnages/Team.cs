@@ -15,9 +15,9 @@ namespace ProjetMMoMrBraux
             team = new SortedSet<Personnage>();
             Nom = this.nom;
         }
-        public void add(Personnage p)
+        public void add(Personnage personnage)
         {
-            team.Add(p);
+            team.Add(personnage);
         }
         public void afficherTeam()
         {

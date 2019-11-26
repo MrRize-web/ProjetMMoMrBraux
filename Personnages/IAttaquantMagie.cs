@@ -4,12 +4,9 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-    class IAttaquantMagie : IAttaquant
+    interface  IAttaquantMagie : IAttaquant
     {
-        public void attaqueMagie()
-        {
-
-        }
+        void AttaqueMagie(Magie magie);
 
     }
 }

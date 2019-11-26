@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-    class Healer : Personnage
+    class Healer : Personnage, IAttaquantMagie
     {
         public static int hpvM = 15;
         public static int agiliteM = 15;
@@ -39,6 +39,21 @@ namespace ProjetMMoMrBraux
         public override void afficherTeam()
         {
             Console.WriteLine("|--------Equipe----------|");
+        }
+
+       public void AttaqueMagie(Magie magie)
+        {
+  
+        }
+
+       public void AttaqueSpeciale(Personnage personnage)
+        {
+            Random rand = new Random();
+            int degats = (rand.Next(10) + forceM) / 3;
+            Console.WriteLine(nom + "prend" + degats + "Pdv");
+            int dmg = personnage.GetHpvM(hpv);
+            dmg -= degats;
+            personnage.SethpvM(dmg);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-    class Rogue : Personnage
+    class Rogue : Personnage, IAttaquantArme
     {
         public static int hpvM = 20;
         public static int agiliteM = 20;
@@ -26,20 +26,23 @@ namespace ProjetMMoMrBraux
             this.agilite = Statrandom.Next(1, agiliteM);
             this.force = Statrandom.Next(1, forceM);
         }
-        /*   public override int attaqueSpecial(Personnage p)
-           {
-
-           }*/
-       /* public void attaque(Rogue deux)
-        {
-            Random rand = new Random();
-            int degats = (rand.Next(10) + forceM) / 3;
-            Console.WriteLine(deux.nom + "prend" + degats + "Pdv");
-            deux.SethpvM((deux.GetHpvM) - degats);
-        }*/
         public override void afficherTeam()
         {
             Console.WriteLine("|--------Equipe----------|");
+        }
+
+     public  void AttaqueSpeciale(Personnage personnage)
+        {
+            Random rand = new Random();
+            int degats = (rand.Next(10) + agiliteM) / 3;
+            Console.WriteLine(nom + "prend" + degats + "Pdv");
+            int dmg = personnage.GetHpvM(hpv);
+            dmg -= degats;
+            personnage.SethpvM(dmg);
+        }
+       public void AttaqueArme(Arme arme)
+        {
+            
         }
     }
 

@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-    class IAttaquant
+    interface IAttaquant
     {
-    //    int attaqueSpeciale(Personnage p);
+        void AttaqueSpeciale(Personnage personnage);
     }
 }

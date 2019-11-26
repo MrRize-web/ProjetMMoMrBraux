@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-    class Barbare : Personnage
+    class Barbare : Personnage, IAttaquantArme
     {
         public static int hpvM = 30;
         public static int agiliteM = 15;
@@ -44,6 +44,21 @@ namespace ProjetMMoMrBraux
         public override void afficherTeam()
         {
             Console.WriteLine("|--------Equipe----------|");
+        }
+
+        public void AttaqueArme(Arme arme)
+        {
+       
+        }
+
+        public void AttaqueSpeciale(Personnage personnage)
+        {
+            Random rand = new Random();
+            int degats = (rand.Next(10) + forceM) / 3;
+            Console.WriteLine(nom + "prend" + degats + "Pdv");
+            int dmg = personnage.GetHpvM(hpv);
+            dmg -= degats;
+            personnage.SethpvM(dmg);
         }
     }
 }

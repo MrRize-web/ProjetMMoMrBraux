@@ -4,9 +4,9 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-    class Mage : Personnage
+    class Mage : Personnage, IAttaquantMagie
     {
-
+     
         public static int hpvM = 20;
         public static int manaM = 20;
         public static int agiliteM = 15;
@@ -32,16 +32,24 @@ namespace ProjetMMoMrBraux
             this.force = Statrandom.Next(1, forceM);
 
         }
-       /* public void attaque(Mage deux)
-        {
-            Random rand = new Random();
-            int degats = (rand.Next(10) + forceM) / 3;
-            Console.WriteLine(deux.nom + "prend" + degats + "Pdv");
-            deux.SethpvM((deux.GetHpvM) - degats);
-        }*/
         public override void afficherTeam()
         {
             Console.WriteLine("|--------Equipe----------|");
+        }
+
+      public  void AttaqueMagie(Magie magie)
+        {
+
+        }
+
+       public void AttaqueSpeciale(Personnage personnage)
+        {
+            Random rand = new Random();
+            int degats = (rand.Next(10) + manaM) / 3;
+            Console.WriteLine(nom + "prend" + degats + "Pdv");
+            int dmg = personnage.GetHpvM(hpv);
+            dmg -= degats;
+            personnage.SethpvM(dmg);
         }
     }
 }
