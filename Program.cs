@@ -16,6 +16,15 @@ namespace ProjetMMoMrBraux
             {
                 Console.WriteLine("Quelle classe voulez vous jouer ? (Barbare = 1, Rogue = 2, Mage = 3, Healer = 4)");
                 string Metier = Console.ReadLine();
+                if ((Metier == "" || Metier == null ))
+                {
+                    while (Metier == "" || Metier == null)
+                    {
+                        Console.WriteLine("Votre Classe aventurier ?");
+                        Metier = Console.ReadLine();
+                      
+                    }
+                }
                 switch (Metier)
                 {
                     case "1":
@@ -107,7 +116,7 @@ namespace ProjetMMoMrBraux
                                   "|-3: Retirer un item dans un sac-|\n" +
                                   "|-4: Afficher ses stats----------|\n" +
                                   "|-5: Ajouter un mate-------------|\n" +
-                                  "|-6: Afficher ses states---------|\n" +
+                                  "|-6: Afficher ses stats----------|\n" +
                                   "|-7: Rejoindre un tournoi--------|\n" +
                                   "|--------------------------------|" + "\n");
            

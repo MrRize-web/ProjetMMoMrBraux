@@ -46,19 +46,22 @@ namespace ProjetMMoMrBraux
             Console.WriteLine("|--------Equipe----------|");
         }
 
-        public void AttaqueArme(Arme arme)
-        {
-       
-        }
+     
 
-        public void AttaqueSpeciale(Personnage personnage)
+        public override int AttaqueSpeciale(Personnage p)
         {
             Random rand = new Random();
             int degats = (rand.Next(10) + forceM) / 3;
             Console.WriteLine(nom + "prend" + degats + "Pdv");
-            int dmg = personnage.GetHpvM(hpv);
+            int dmg = p.GetHpvM(hpv);
             dmg -= degats;
-            personnage.SethpvM(dmg);
+            p.SethpvM(dmg);
+            throw new NotImplementedException();
+        }
+
+        public override int AttaqueArme(Arme arme)
+        {
+            throw new NotImplementedException();
         }
     }
 }

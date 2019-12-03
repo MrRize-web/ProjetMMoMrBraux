@@ -4,17 +4,26 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-    class Tournois
+    public class Tournois
     {
-       public void accepterTournoiArme(IAttaquantArme un, IAttaquantArme deux)
+        public void combatants()
         {
-
-        }
-      public void  accepterTournoiMagie(IAttaquantMagie un, IAttaquantMagie deux)
+            Program Joueur;
+            Program Joueur2;
+ 
+        bool tournois = true;
+        void DebutCombat()
         {
+            combatants();
+            while (tournois == true){
+             /*   if (Joueur.Pdv==0 || Joueur2.Pdv==0)
+                {
 
+                }*/
+
+
+             }
         }
-
-
+        }
     }
 }

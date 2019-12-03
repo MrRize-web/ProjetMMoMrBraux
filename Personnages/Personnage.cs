@@ -52,14 +52,14 @@ namespace ProjetMMoMrBraux
         }
 
         public abstract void afficherTeam();
-        public void accepterTournoiArme(IAttaquantArme un, IAttaquantArme deux)
+      /*  public void accepterTournoiArme(IAttaquantArme un, IAttaquantArme deux)
         {
 
         }
         public void accepterTournoiMagie(IAttaquantArme un, IAttaquantArme deux)
         {
 
-        }
+        }*/
         //  public abstract int getMaxForce();
         public void SethpvM(int deg)
         {
@@ -74,6 +74,8 @@ namespace ProjetMMoMrBraux
            {
 
            }*/
+        public abstract int AttaqueSpeciale(Personnage p);
+        public abstract int AttaqueArme(Arme arme);
     }
 
 }
