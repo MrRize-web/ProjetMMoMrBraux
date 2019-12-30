@@ -15,8 +15,7 @@ namespace ProjetMMoMrBraux
           }
      
         public void ajouterItem(Objets objet)
-        {
-           
+        {       
             iventaireSac.Push(objet);
         }
         public void retirerItem(Objets objet)
@@ -33,8 +32,7 @@ namespace ProjetMMoMrBraux
         
         }
         public bool count()
-        {
-          
+        {       
             if (iventaireSac.Count() >= 1)
             {
                 return false;

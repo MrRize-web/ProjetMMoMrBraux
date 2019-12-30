@@ -4,9 +4,10 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-   interface IAttaquantArme : IAttaquant
-    {      
-       int AttaqueArme(Arme arme);
-
+   interface IAttaquantArme
+    {
+        void attaqueSpecialeArme(Personnage p);
+        string getArme();
+        int gethpv();
     }
 }

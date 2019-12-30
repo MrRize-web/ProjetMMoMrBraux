@@ -1,29 +1,70 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-    public class Tournois
+    class Tournois
     {
-        public void combatants()
+        public void accepterTournoi(IAttaquantArme Joueur, IAttaquantArme Joueur2)
         {
-            Program Joueur;
-            Program Joueur2;
- 
-        bool tournois = true;
-        void DebutCombat()
-        {
-            combatants();
-            while (tournois == true){
-             /*   if (Joueur.Pdv==0 || Joueur2.Pdv==0)
+            int turn = 1;
+            while (Joueur.gethpv() > 0 && Joueur2.gethpv() > 0)
+            {
+                if (turn == 1)
                 {
-
-                }*/
-
-
-             }
+                    Personnage cible = Joueur2 as Personnage;
+                    Joueur.attaqueSpecialeArme(cible);
+                    turn++;
+                }
+                else if (turn == 2)
+                {
+                    Personnage cible = Joueur as Personnage;
+                    Joueur2.attaqueSpecialeArme(cible);
+                    turn--;
+                }
+                try
+                {
+                    if (Joueur.gethpv() <= 0 || Joueur2.gethpv() <= 0)
+                    {
+                        throw new pdvSousZeroException();
+                    }
+                }
+                catch (pdvSousZeroException)
+                {
+                    Console.WriteLine("Impossible de se battre, un des deux combattants est mort !!!");
+                }
+            }
         }
+        public void accepterTournoi(IAttaquantMagie Joueur, IAttaquantMagie Joueur2)
+        {
+            int turn = 1;
+            while (Joueur.gethpv() > 0 && Joueur2.gethpv() > 0)
+            {
+                if (turn == 1)
+                {
+                    Personnage cible = Joueur2 as Personnage;
+                    Joueur.attaqueSpecialeMagie(cible);
+                    turn++;
+                }
+                else if (turn == 2)
+                {
+                    Personnage cible = Joueur as Personnage;
+                    Joueur2.attaqueSpecialeMagie(cible);
+                    turn--;
+                }
+                try
+                {
+                    if (Joueur.gethpv() <= 0 || Joueur2.gethpv() <= 0)
+                    {
+                        throw new pdvSousZeroException();
+                    }
+                }
+                catch (pdvSousZeroException)
+                {
+                    Console.WriteLine("Impossible de se battre, un des deux combattants est mort !!!");
+                }
+            }
         }
+
+
     }
 }

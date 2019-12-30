@@ -11,6 +11,7 @@ namespace ProjetMMoMrBraux
         public static int manaM = 20;
         public static int agiliteM = 15;
         public static int forceM = 15;
+        private Magie sortAcquis;
         public override int getNbSacMax() { return 2; }
 
         public override void Displays()
@@ -23,9 +24,9 @@ namespace ProjetMMoMrBraux
             Console.WriteLine(" -->  Force    : " + this.force);
             Console.WriteLine("|-----------------------------|" + "\n");
         }
-        public Mage(/*string name*/)
+        public Mage(string name) : base(name)
         {
-            //this.nom = name;
+            this.nom = name;
             this.hpv = Statrandom.Next(1, hpvM);
             this.mana = Statrandom.Next(1, manaM);
             this.agilite = Statrandom.Next(1, agiliteM);
@@ -35,14 +36,23 @@ namespace ProjetMMoMrBraux
         public override void afficherTeam()
         {
             Console.WriteLine("|--------Equipe----------|");
+            Team equipe1 = new Team();
+            equipe1.afficher();
         }
 
       public  void AttaqueMagie(Magie magie)
         {
 
         }
-
-       public void AttaqueSpeciale(Personnage personnage)
+        public void attaqueSpecialeMagie(Personnage persoADemonter)
+        {
+            persoADemonter.sethpv(persoADemonter.gethpv() - sortAcquis.getPuissance());
+        }
+        public string getSort()
+        {
+            return "Type: " + sortAcquis.getNom() + ", Puissance: " + sortAcquis.getPuissance();
+        }
+      /*  public void AttaqueSpeciale(Personnage personnage)
         {
             Random rand = new Random();
             int degats = (rand.Next(10) + manaM) / 3;
@@ -50,6 +60,6 @@ namespace ProjetMMoMrBraux
             int dmg = personnage.GetHpvM(hpv);
             dmg -= degats;
             personnage.SethpvM(dmg);
-        }
+        }*/
     }
 }

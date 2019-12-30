@@ -4,9 +4,11 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-    interface  IAttaquantMagie : IAttaquant
+    interface  IAttaquantMagie
     {
-        void AttaqueMagie(Magie magie);
+        void attaqueSpecialeMagie(Personnage p);
+        string getSort();
+        int gethpv();
 
     }
 }

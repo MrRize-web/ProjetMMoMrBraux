@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections;
 
 namespace ProjetMMoMrBraux
 {
@@ -9,6 +10,7 @@ namespace ProjetMMoMrBraux
         public static int hpvM = 20;
         public static int agiliteM = 20;
         public static int forceM = 15;
+        private Arme armePortee;
         public override int getNbSacMax() { return 3; }
         public override void Displays()
         {
@@ -17,21 +19,32 @@ namespace ProjetMMoMrBraux
             Console.WriteLine(" -->  HP      : " + this.hpv);
             Console.WriteLine(" -->  Agilité : " + this.agilite);
             Console.WriteLine(" -->  Force   : " + this.force);
+            Console.WriteLine(" -->  Arme   : " + this.armePortee);
             Console.WriteLine("|-----------------------------|" + "\n");
-        }
-        public Rogue(/*string name*/)
-        {
-            //this.nom = name;
-            this.hpv = Statrandom.Next(1, hpvM);
-            this.agilite = Statrandom.Next(1, agiliteM);
-            this.force = Statrandom.Next(1, forceM);
         }
         public override void afficherTeam()
         {
             Console.WriteLine("|--------Equipe----------|");
+            Team equipe1 = new Team();
+            equipe1.afficher();
         }
-
-     public  void AttaqueSpeciale(Personnage personnage)
+        public Rogue(string name) : base(name)
+        {
+            this.hpv = Statrandom.Next(1, hpvM);
+            this.agilite = Statrandom.Next(1, agiliteM);
+            this.force = Statrandom.Next(1, forceM);
+            this.armePortee = new Arme();
+        }
+   
+        public void attaqueSpecialeArme(Personnage persoAtuer)
+        {
+            persoAtuer.sethpv(persoAtuer.gethpv() - armePortee.getPuissance());
+        }
+        public string getArme()
+        {
+            return "Type: " + armePortee.getType() + ", Puissance: " + armePortee.getPuissance();
+        }
+      /*  public  void AttaqueSpeciale(Personnage personnage)
         {
             Random rand = new Random();
             int degats = (rand.Next(10) + agiliteM) / 3;
@@ -39,11 +52,11 @@ namespace ProjetMMoMrBraux
             int dmg = personnage.GetHpvM(hpv);
             dmg -= degats;
             personnage.SethpvM(dmg);
-        }
-       public void AttaqueArme(Arme arme)
+        }*/
+    /*   public void AttaqueArme(Arme arme)
         {
             
-        }
+        }*/
     }
 
 }

@@ -9,11 +9,12 @@ namespace ProjetMMoMrBraux
         public static int hpvM = 15;
         public static int agiliteM = 15;
         public static int forceM = 15;
+        private Magie sortAcqui;
         public override int getNbSacMax() { return 2; }
-        //public override int getMaxForce() { return this.force; }
 
         public override  void Displays()
         {
+            Console.WriteLine("Nom : " + this.nom);
             Console.WriteLine("|--------Statistique----------|");
             Console.WriteLine(" -->  Classe   : Healer");
             Console.WriteLine(" -->  HP       : " + this.hpv);
@@ -21,9 +22,9 @@ namespace ProjetMMoMrBraux
             Console.WriteLine(" -->  Force    : " + this.force);
             Console.WriteLine("|-----------------------------|" + "\n");
         }
-        public Healer(/*string name*/)
+        public Healer(string name) : base(name)
         {
-            //this.nom = name;
+            this.nom = name;
             this.hpv = Statrandom.Next(1, hpvM);
             this.agilite = Statrandom.Next(1, agiliteM);
             this.force = Statrandom.Next(1, forceM);
@@ -39,6 +40,9 @@ namespace ProjetMMoMrBraux
         public override void afficherTeam()
         {
             Console.WriteLine("|--------Equipe----------|");
+            
+         /*   Team equipe1 = new Team();
+            equipe1.afficher();*/
         }
 
        public void AttaqueMagie(Magie magie)
@@ -46,7 +50,15 @@ namespace ProjetMMoMrBraux
   
         }
 
-       public void AttaqueSpeciale(Personnage personnage)
+        public void attaqueSpecialeMagie(Personnage persoADemonter)
+        {
+            persoADemonter.sethpv(persoADemonter.gethpv() - sortAcqui.getPuissance());
+        }
+        public string getSort()
+        {
+            return "Type: " + sortAcqui.getNom() + ", Puissance: " + sortAcqui.getPuissance();
+        }
+      /*  public void AttaqueSpeciale(Personnage personnage)
         {
             Random rand = new Random();
             int degats = (rand.Next(10) + forceM) / 3;
@@ -54,6 +66,6 @@ namespace ProjetMMoMrBraux
             int dmg = personnage.GetHpvM(hpv);
             dmg -= degats;
             personnage.SethpvM(dmg);
-        }
+        }*/
     }
 }

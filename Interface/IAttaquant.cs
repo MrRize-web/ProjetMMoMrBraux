@@ -6,7 +6,6 @@ namespace ProjetMMoMrBraux
 {
     interface IAttaquant
     {
-        int AttaqueSpeciale(Personnage personnage);
-      
+        int attaqueSpeciale(Personnage personnage);
     }
 }
