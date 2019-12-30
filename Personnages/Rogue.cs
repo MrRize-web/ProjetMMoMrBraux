@@ -25,8 +25,12 @@ namespace ProjetMMoMrBraux
         public override void afficherTeam()
         {
             Console.WriteLine("|--------Equipe----------|");
-            Team equipe1 = new Team();
-            equipe1.afficher();
+        }
+        public override void afficherArme()
+        {
+            Console.WriteLine("|--------Arme-----------------|");
+            Console.WriteLine("|--Nom : " + this.armePortee + "|");
+            Console.WriteLine("|-----------------------------|" + "\n");
         }
         public Rogue(string name) : base(name)
         {

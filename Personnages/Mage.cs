@@ -22,6 +22,7 @@ namespace ProjetMMoMrBraux
             Console.WriteLine(" -->  Mana     : " + this.mana);
             Console.WriteLine(" -->  Agilité  : " + this.agilite);
             Console.WriteLine(" -->  Force    : " + this.force);
+            Console.WriteLine(" -->  Arme   : " + this.sortAcquis);
             Console.WriteLine("|-----------------------------|" + "\n");
         }
         public Mage(string name) : base(name)
@@ -33,14 +34,18 @@ namespace ProjetMMoMrBraux
             this.force = Statrandom.Next(1, forceM);
 
         }
+        public override void afficherArme()
+        {
+            Console.WriteLine("|--------Arme-----------------|");
+            Console.WriteLine("|--Nom : " + this.sortAcquis + "|");
+            Console.WriteLine("|-----------------------------|" + "\n");
+        }
         public override void afficherTeam()
         {
             Console.WriteLine("|--------Equipe----------|");
-            Team equipe1 = new Team();
-            equipe1.afficher();
         }
 
-      public  void AttaqueMagie(Magie magie)
+        public void AttaqueMagie(Magie magie)
         {
 
         }

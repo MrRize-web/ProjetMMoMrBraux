@@ -29,6 +29,7 @@ namespace ProjetMMoMrBraux
             Console.WriteLine(" -->  HP       : " + this.hpv);
             Console.WriteLine(" -->  Agilité  : " + this.agilite);
             Console.WriteLine(" -->  Force    : " + this.force);
+            Console.WriteLine(" -->  Arme   : " + this.armePortee);
             Console.WriteLine("|-----------------------------|" + "\n");
         }
         public override void afficherTeam()
@@ -37,6 +38,12 @@ namespace ProjetMMoMrBraux
             Team equipe1 = new Team();
             equipe1.afficher();
 
+        }
+        public override void afficherArme()
+        {
+            Console.WriteLine("|--------Arme-----------------|");
+            Console.WriteLine("|--Nom : " + this.armePortee+"|");
+            Console.WriteLine("|-----------------------------|" + "\n");
         }
 
         /*   public void attaque(Barbare deux)
@@ -50,19 +57,25 @@ namespace ProjetMMoMrBraux
 
 
 
-    /*    public override int AttaqueSpeciale(Personnage p)
-        {
-            Random rand = new Random();
-            int degats = (rand.Next(10) + forceM) / 3;
-            Console.WriteLine(nom + "prend" + degats + "Pdv");
-            int dmg = p.gethpv();
-            dmg -= degats;
-            p.SethpvM(dmg);
-            throw new NotImplementedException();
-        }*/
+        /*    public override int AttaqueSpeciale(Personnage p)
+            {
+                Random rand = new Random();
+                int degats = (rand.Next(10) + forceM) / 3;
+                Console.WriteLine(nom + "prend" + degats + "Pdv");
+                int dmg = p.gethpv();
+                dmg -= degats;
+                p.SethpvM(dmg);
+                throw new NotImplementedException();
+            }*/
         public void attaqueSpecialeArme(Personnage persoADemonter)
         {
             persoADemonter.sethpv(persoADemonter.gethpv() - armePortee.getPuissance());
+            Random rand = new Random();
+            int degats = (rand.Next(10) + forceM) / 3;
+            Console.WriteLine(nom + "prend" + degats + "Pdv");
+            int dmg = persoADemonter.gethpv();
+            dmg -= degats;
+            persoADemonter.SethpvM(dmg);
         }
         public string getArme()
         {

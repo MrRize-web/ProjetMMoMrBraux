@@ -76,7 +76,7 @@ namespace ProjetMMoMrBraux
         public abstract void afficherTeam();
         public abstract void Displays();
         public abstract int getNbSacMax();
-
+        public abstract void afficherArme();
     }
 
 }

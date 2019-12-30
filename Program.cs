@@ -7,7 +7,6 @@ namespace ProjetMMoMrBraux
         static void Main(string[] args)
         {
             bool game = true;
-            Tournois tournoi = new Tournois();
             Personnage Joueur = null;
             Personnage Joueur2 = null;
             Personnage Joueur3 = null;
@@ -1410,10 +1409,17 @@ namespace ProjetMMoMrBraux
                         if (Choix8 == "oui" || Choix8 == "OUI" || Choix8 == "Oui" || Choix8 == "O")
                         {
                             Console.Clear();
+                            Tournois tournoi = new Tournois();
+                            Console.WriteLine("Selection de l'arme du combatant 1 :");
+                            Barbare Combatant1 = new Barbare("j1");
 
-                            tournoi.accepterTournoi(Joueur, Joueur2);
-                            Console.WriteLine(Joueur.gethpv());
-                            Console.WriteLine(Joueur2.gethpv());
+                            Joueur.afficherArme();
+                            Console.WriteLine("Selection de l'arme du combatant 2 :");
+                            Barbare Combatant2 = new Barbare("j2");
+
+                        //    tournoi.accepterTournoi(Combatant1, Combatant2);
+                            Console.WriteLine(Combatant1.gethpv());
+                            Console.WriteLine(Combatant2.gethpv());
                         }
                         break;
 

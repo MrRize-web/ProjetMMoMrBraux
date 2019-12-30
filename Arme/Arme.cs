@@ -31,5 +31,9 @@ namespace ProjetMMoMrBraux
         {
             return this.puissance;
         }
+        public  void afficherArme()
+        {
+            Console.WriteLine("Nom : " + this.type + " avec pour puissance : " + this.puissance + "puissance");
+        }
     }
 }

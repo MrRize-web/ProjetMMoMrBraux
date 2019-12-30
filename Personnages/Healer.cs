@@ -9,9 +9,10 @@ namespace ProjetMMoMrBraux
         public static int hpvM = 15;
         public static int agiliteM = 15;
         public static int forceM = 15;
-        private Magie sortAcqui;
+        private Magie sortAcquis;
         public override int getNbSacMax() { return 2; }
 
+       
         public override  void Displays()
         {
             Console.WriteLine("Nom : " + this.nom);
@@ -20,6 +21,7 @@ namespace ProjetMMoMrBraux
             Console.WriteLine(" -->  HP       : " + this.hpv);
             Console.WriteLine(" -->  Agilité  : " + this.agilite);
             Console.WriteLine(" -->  Force    : " + this.force);
+            Console.WriteLine(" -->  Arme     : " + this.sortAcquis);
             Console.WriteLine("|-----------------------------|" + "\n");
         }
         public Healer(string name) : base(name)
@@ -44,19 +46,24 @@ namespace ProjetMMoMrBraux
          /*   Team equipe1 = new Team();
             equipe1.afficher();*/
         }
-
-       public void AttaqueMagie(Magie magie)
+        public override void afficherArme()
         {
-  
+            Console.WriteLine("|--------Arme-----------------|");
+            Console.WriteLine("|--Nom : " + this.sortAcquis + "|");
+            Console.WriteLine("|-----------------------------|" + "\n");
+        }
+
+        public void AttaqueMagie(Magie magie)
+        {
         }
 
         public void attaqueSpecialeMagie(Personnage persoADemonter)
         {
-            persoADemonter.sethpv(persoADemonter.gethpv() - sortAcqui.getPuissance());
+            persoADemonter.sethpv(persoADemonter.gethpv() - sortAcquis.getPuissance());
         }
         public string getSort()
         {
-            return "Type: " + sortAcqui.getNom() + ", Puissance: " + sortAcqui.getPuissance();
+            return "Type: " + sortAcquis.getNom() + ", Puissance: " + sortAcquis.getPuissance();
         }
       /*  public void AttaqueSpeciale(Personnage personnage)
         {
