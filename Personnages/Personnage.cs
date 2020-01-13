@@ -73,6 +73,8 @@ namespace ProjetMMoMrBraux
             }
             return false;
         }
+        public abstract string getClasses();
+
         public abstract void afficherTeam();
         public abstract void Displays();
         public abstract int getNbSacMax();

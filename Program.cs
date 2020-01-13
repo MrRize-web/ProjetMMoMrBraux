@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetMMoMrBraux.Bataille;
+using System;
 
 namespace ProjetMMoMrBraux
 {
@@ -140,15 +141,20 @@ namespace ProjetMMoMrBraux
             game = true;
             while (game == true)
             {   
-                Console.WriteLine("|--------MENU PRINCIPAL----------|\n"+
-                                  "|-1: Ajouter un item dans un sac-|\n" +
-                                  "|-2: Afficher vos sac------------|\n" +
-                                  "|-3: Retirer un item dans un sac-|\n" +
-                                  "|-4: Afficher ses stats----------|\n" +
-                                  "|-5: Ajouter un mate-------------|\n" +
-                                  "|-6: Afficher L'équipe-----------|\n" +
-                                  "|-7: Rejoindre un tournoi--------|\n" +
-                                  "|--------------------------------|" + "\n");
+                Console.WriteLine("|--------MENU PRINCIPAL------------|\n"+
+                                  "|-1: Ajouter un item dans un sac---|\n" +
+                                  "|-2: Afficher vos sac--------------|\n" +
+                                  "|-3: Retirer un item dans un sac---|\n" +
+                                  "|-4: Afficher ses stats------------|\n" +
+                                  "|-5: Ajouter un mate---------------|\n" +
+                                  "|-6: Afficher L'équipe-------------|\n" +
+                                  "|-7: Rejoindre un tournoi Barvare--|\n" +
+                                  "|-8: Rejoindre un tournoi Mage-----|\n" +
+                                  "|-9: Rejoindre un tournoi Rogue----|\n" +
+                                  "|-10: Rejoindre un tournoi Healer--|\n" +
+                                  "|-11: Rejoindre un tournoi d'Arme--|\n" +
+                                  "|-12: Rejoindre un tournoi de Magie|\n" +
+                                  "|----------------------------------|" + "\n");
            
                 string Choix1 = Console.ReadLine();
                 int sacMax = Joueur.getNbSacMax();
@@ -1404,22 +1410,125 @@ namespace ProjetMMoMrBraux
                         break;
 
                     case "7":
-                        Console.WriteLine("Voulez-vous rejoindre un Tournois (oui ou non)");
+                        Console.WriteLine("Voulez-vous rejoindre un Tournois de Barbare (oui ou non)");
                         string Choix8 = Console.ReadLine();
                         if (Choix8 == "oui" || Choix8 == "OUI" || Choix8 == "Oui" || Choix8 == "O")
                         {
                             Console.Clear();
                             Tournois tournoi = new Tournois();
-                            Console.WriteLine("Selection de l'arme du combatant 1 :");
+                            //Console.WriteLine("Selection de l'arme du combatant 1 :");
                             Barbare Combatant1 = new Barbare("j1");
-
-                            Joueur.afficherArme();
-                            Console.WriteLine("Selection de l'arme du combatant 2 :");
+                            //Joueur.afficherArme();
+                            //Console.WriteLine("Selection de l'arme du combatant 2 :");
                             Barbare Combatant2 = new Barbare("j2");
+                            Console.WriteLine("Point de vie du combatant 1 :" + Combatant1.gethpv());
+                            Console.WriteLine("Point de vie du combatant 2 :" + Combatant2.gethpv());
+                            tournoi.accepterTournoi(Combatant1, Combatant2);
+                            Console.WriteLine("Point de vie du combatant 1 :"+ Combatant1.gethpv());          
 
-                        //    tournoi.accepterTournoi(Combatant1, Combatant2);
-                            Console.WriteLine(Combatant1.gethpv());
-                            Console.WriteLine(Combatant2.gethpv());
+                        }
+                        break;
+
+                    case "8":
+                        Console.WriteLine("Voulez-vous rejoindre un Tournois de Mage (oui ou non)");
+                        string Choix9 = Console.ReadLine();
+                        if (Choix9 == "oui" || Choix9 == "OUI" || Choix9 == "Oui" || Choix9 == "O")
+                        {
+
+                            Console.Clear();
+                            Tournois tournoi = new Tournois();
+                            //Console.WriteLine("Selection de l'arme du combatant 1 :");
+                            Mage Combatant1 = new Mage("j1");
+                            //Joueur.afficherArme();
+                            //Console.WriteLine("Selection de l'arme du combatant 2 :");
+                            Mage Combatant2 = new Mage("j2");
+                            Console.WriteLine("Point de vie du combatant 1 :" + Combatant1.gethpv());
+                            Console.WriteLine("Point de vie du combatant 2 :" + Combatant2.gethpv());
+                            tournoi.accepterTournoi(Combatant1, Combatant2);
+                            Console.WriteLine("Point de vie du combatant 1 :" + Combatant1.gethpv());
+                            Console.WriteLine("Point de vie du combatant 2 :" + Combatant2.gethpv());
+
+                        }
+                        break;
+
+                    case "9":
+                        Console.WriteLine("Voulez-vous rejoindre un Tournois de Rogue (oui ou non)");
+                        string Choix10 = Console.ReadLine();
+                        if (Choix10 == "oui" || Choix10 == "OUI" || Choix10 == "Oui" || Choix10 == "O")
+                        {
+
+                            Console.Clear();
+                            Tournois tournoi = new Tournois();
+                            //Console.WriteLine("Selection de l'arme du combatant 1 :");
+                            Rogue Combatant1 = new Rogue("j1");
+                            //Joueur.afficherArme();
+                            //Console.WriteLine("Selection de l'arme du combatant 2 :");
+                            Rogue Combatant2 = new Rogue("j2");
+                            Console.WriteLine("Point de vie du combatant 1 :" + Combatant1.gethpv());
+                            Console.WriteLine("Point de vie du combatant 2 :" + Combatant2.gethpv());
+                            tournoi.accepterTournoi(Combatant1, Combatant2);
+                            Console.WriteLine("Point de vie du combatant 1 :" + Combatant1.gethpv());
+                            Console.WriteLine("Point de vie du combatant 2 :" + Combatant2.gethpv());
+
+                        }
+                        break;
+
+                    case "10":
+
+                        Console.WriteLine("Voulez-vous rejoindre un Tournois de Healer (oui ou non)");
+                        string Choix11 = Console.ReadLine();
+                        if (Choix11 == "oui" || Choix11 == "OUI" || Choix11 == "Oui" || Choix11 == "O")
+                        {
+
+                            Console.Clear();
+                            Tournois tournoi = new Tournois();
+                            //Console.WriteLine("Selection de l'arme du combatant 1 :");
+                            Healer Combatant1 = new Healer("j1");
+                            //Joueur.afficherArme();
+                            //Console.WriteLine("Selection de l'arme du combatant 2 :");
+                            Healer Combatant2 = new Healer("j2");
+                            Console.WriteLine("Point de vie du combatant 1 :" + Combatant1.gethpv());
+                            Console.WriteLine("Point de vie du combatant 2 :" + Combatant2.gethpv());
+                            tournoi.accepterTournoi(Combatant1, Combatant2);
+                            Console.WriteLine("Point de vie du combatant 1 :" + Combatant1.gethpv());
+                            Console.WriteLine("Point de vie du combatant 2 :" + Combatant2.gethpv());
+
+                        }
+                        break;
+
+                    case "11":
+                        Console.WriteLine("Voulez-vous rejoindre un Tournois de Combattant Arme (oui ou non)");
+                        string Choix12 = Console.ReadLine();
+                        if (Choix12 == "oui" || Choix12 == "OUI" || Choix12 == "Oui" || Choix12 == "O")
+                        {
+
+                            Console.Clear();
+
+                            Tournoi tournoi1 = new Tournoi(Joueur, Joueur2);
+                            Console.WriteLine("////////////Tounois Magie/////////////");
+                            Console.WriteLine("Point de vie du combatant 1 :" + Joueur.gethpv());
+                            Console.WriteLine("Point de vie du combatant 2 :" + Joueur2.gethpv());
+                            tournoi1.accepterTournoiMagie();
+                            Console.WriteLine("Point de vie du combatant 1 :" + Joueur.gethpv());
+                            Console.WriteLine("Point de vie du combatant 2 :" + Joueur2.gethpv());
+
+                        }
+                        break;
+                    case "12":
+                        Console.WriteLine("Voulez-vous rejoindre un Tournois de Combattant Magie (oui ou non)");
+                        string Choix13 = Console.ReadLine();
+                        if (Choix13 == "oui" || Choix13 == "OUI" || Choix13 == "Oui" || Choix13 == "O")
+                        {
+
+                            Console.Clear();
+                            Tournoi tournoi1 = new Tournoi(Joueur, Joueur2);
+                            Console.WriteLine("////////////Tounois Magie/////////////");
+                            Console.WriteLine("Point de vie du combatant 1 :" + Joueur.gethpv());
+                            Console.WriteLine("Point de vie du combatant 2 :" + Joueur2.gethpv());
+                            tournoi1.accepterTournoiMagie();
+                            Console.WriteLine("Point de vie du combatant 1 :" + Joueur.gethpv());
+                            Console.WriteLine("Point de vie du combatant 2 :" + Joueur2.gethpv());
+
                         }
                         break;
 

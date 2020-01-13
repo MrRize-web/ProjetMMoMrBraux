@@ -39,7 +39,10 @@ namespace ProjetMMoMrBraux
             this.force = Statrandom.Next(1, forceM);
             this.armePortee = new Arme();
         }
-   
+        public override string getClasses()
+        {
+            return "Rogue";
+        }
         public void attaqueSpecialeArme(Personnage persoAtuer)
         {
             persoAtuer.sethpv(persoAtuer.gethpv() - armePortee.getPuissance());

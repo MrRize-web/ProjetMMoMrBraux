@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-    class Sac
+   public class Sac
     {
 
          Stack<Objets> iventaireSac = new Stack<Objets>(4);
@@ -13,7 +13,7 @@ namespace ProjetMMoMrBraux
           {
             iventaireSac = new Stack<Objets>();           
           }
-     
+
         public void ajouterItem(Objets objet)
         {       
             iventaireSac.Push(objet);
@@ -28,8 +28,7 @@ namespace ProjetMMoMrBraux
             {
                 nom.afficherObjets();
          
-            }
-        
+            }    
         }
         public bool count()
         {       
@@ -41,6 +40,16 @@ namespace ProjetMMoMrBraux
                 return true;
             }
             
+        }
+
+        public int nombreItemDansSac()
+        {
+            int nombreItems = 0;
+            foreach (Object objet in iventaireSac)
+            {
+                nombreItems++;
+            }
+            return nombreItems;
         }
     }
 }

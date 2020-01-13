@@ -54,7 +54,10 @@ namespace ProjetMMoMrBraux
                deux.SethpvM((deux.GetHpvM) - degats);
            }*/
 
-
+            public override string getClasses()
+        {
+            return "Barbare";
+        }
 
 
         /*    public override int AttaqueSpeciale(Personnage p)
@@ -67,9 +70,11 @@ namespace ProjetMMoMrBraux
                 p.SethpvM(dmg);
                 throw new NotImplementedException();
             }*/
+       
         public void attaqueSpecialeArme(Personnage persoADemonter)
         {
-            persoADemonter.sethpv(persoADemonter.gethpv() - armePortee.getPuissance());
+       
+            persoADemonter.sethpv(persoADemonter.gethpv() - 5/*- armePortee.getPuissance()*/);
             Random rand = new Random();
             int degats = (rand.Next(10) + forceM) / 3;
             Console.WriteLine(nom + "prend" + degats + "Pdv");
@@ -79,7 +84,7 @@ namespace ProjetMMoMrBraux
         }
         public string getArme()
         {
-            return "Type: " + armePortee.getType() + ", Puissance: " + armePortee.getPuissance();
+            return "Type: " + armePortee.getType() + ", Puissance: 5" /*+ armePortee.getPuissance()*/;
         }
       /*  public override int AttaqueArme(Arme arme)
         {

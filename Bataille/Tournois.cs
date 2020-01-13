@@ -25,6 +25,12 @@ namespace ProjetMMoMrBraux
                 {
                     if (Joueur.gethpv() <= 0 || Joueur2.gethpv() <= 0)
                     {
+                        if (Joueur.gethpv() <= 0)
+                        {
+                            Console.WriteLine("le Combatant suivant est mort ==> Combattant 1");
+                        }
+                        else
+                            Console.WriteLine("le Combatant suivant est mort ==> Combattant 2");
                         throw new pdvSousZeroException();
                     }
                 }
@@ -55,12 +61,20 @@ namespace ProjetMMoMrBraux
                 {
                     if (Joueur.gethpv() <= 0 || Joueur2.gethpv() <= 0)
                     {
+                        if (Joueur.gethpv() <= 0)
+                        {
+                            Console.WriteLine("le Combatant suivant est mort ==> Combattant 1");
+                        }
+                        else
+                            Console.WriteLine("le Combatant suivant est mort ==> Combattant 2");
+
                         throw new pdvSousZeroException();
                     }
                 }
                 catch (pdvSousZeroException)
                 {
                     Console.WriteLine("Impossible de se battre, un des deux combattants est mort !!!");
+                     
                 }
             }
         }

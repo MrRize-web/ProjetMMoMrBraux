@@ -44,18 +44,21 @@ namespace ProjetMMoMrBraux
         {
             Console.WriteLine("|--------Equipe----------|");
         }
-
+        public override string getClasses()
+        {
+            return "Mage";
+        }
         public void AttaqueMagie(Magie magie)
         {
 
         }
         public void attaqueSpecialeMagie(Personnage persoADemonter)
         {
-            persoADemonter.sethpv(persoADemonter.gethpv() - sortAcquis.getPuissance());
+            persoADemonter.sethpv(persoADemonter.gethpv() - 3 /*- sortAcquis.getPuissance()*/);
         }
         public string getSort()
         {
-            return "Type: " + sortAcquis.getNom() + ", Puissance: " + sortAcquis.getPuissance();
+            return "Type: " + sortAcquis.getNom() + ", Puissance: 3 "/* + sortAcquis.getPuissance()*/;
         }
       /*  public void AttaqueSpeciale(Personnage personnage)
         {

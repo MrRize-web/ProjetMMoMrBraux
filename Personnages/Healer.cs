@@ -32,13 +32,17 @@ namespace ProjetMMoMrBraux
             this.force = Statrandom.Next(1, forceM);
 
         }
-      /*  public void attaque(Healer deux)
+        public override string getClasses()
         {
-            Random rand = new Random();
-            int degats = (rand.Next(10) + forceM) / 3;
-            Console.WriteLine(deux.nom + "prend" + degats + "Pdv");
-            deux.SethpvM((deux.GetHpvM) - degats);
-        }*/
+            return "Healer";
+        }
+        /*  public void attaque(Healer deux)
+          {
+              Random rand = new Random();
+              int degats = (rand.Next(10) + forceM) / 3;
+              Console.WriteLine(deux.nom + "prend" + degats + "Pdv");
+              deux.SethpvM((deux.GetHpvM) - degats);
+          }*/
         public override void afficherTeam()
         {
             Console.WriteLine("|--------Equipe----------|");
@@ -59,11 +63,11 @@ namespace ProjetMMoMrBraux
 
         public void attaqueSpecialeMagie(Personnage persoADemonter)
         {
-            persoADemonter.sethpv(persoADemonter.gethpv() - sortAcquis.getPuissance());
+            persoADemonter.sethpv(persoADemonter.gethpv() - 3/*- sortAcquis.getPuissance()*/);
         }
         public string getSort()
         {
-            return "Type: " + sortAcquis.getNom() + ", Puissance: " + sortAcquis.getPuissance();
+            return "Type: " + sortAcquis.getNom() + ", Puissance: 3 "/* + sortAcquis.getPuissance()*/;
         }
       /*  public void AttaqueSpeciale(Personnage personnage)
         {

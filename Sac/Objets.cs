@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
-    class Objets
+ public   class Objets
     {
         private string nom;
         private int poids;
