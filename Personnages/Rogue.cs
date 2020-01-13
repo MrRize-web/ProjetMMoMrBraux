@@ -19,7 +19,7 @@ namespace ProjetMMoMrBraux
             Console.WriteLine(" -->  HP      : " + this.hpv);
             Console.WriteLine(" -->  Agilité : " + this.agilite);
             Console.WriteLine(" -->  Force   : " + this.force);
-            Console.WriteLine(" -->  Arme   : " + this.armePortee);
+            Console.WriteLine(" -->  Arme    : Des petits couteaux pointus");
             Console.WriteLine("|-----------------------------|" + "\n");
         }
         public override void afficherTeam()
@@ -28,9 +28,9 @@ namespace ProjetMMoMrBraux
         }
         public override void afficherArme()
         {
-            Console.WriteLine("|--------Arme-----------------|");
-            Console.WriteLine("|--Nom : " + this.armePortee + "|");
-            Console.WriteLine("|-----------------------------|" + "\n");
+            Console.WriteLine("|--------Arme---------------------------|");
+            Console.WriteLine("|--Nom : Dague de shaclone le malicieux-|");
+            Console.WriteLine("|---------------------------------------|" + "\n");
         }
         public Rogue(string name) : base(name)
         {

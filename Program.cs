@@ -148,7 +148,7 @@ namespace ProjetMMoMrBraux
                                   "|-4: Afficher ses stats------------|\n" +
                                   "|-5: Ajouter un mate---------------|\n" +
                                   "|-6: Afficher L'équipe-------------|\n" +
-                                  "|-7: Rejoindre un tournoi Barvare--|\n" +
+                                  "|-7: Rejoindre un tournoi Barbare--|\n" +
                                   "|-8: Rejoindre un tournoi Mage-----|\n" +
                                   "|-9: Rejoindre un tournoi Rogue----|\n" +
                                   "|-10: Rejoindre un tournoi Healer--|\n" +
@@ -228,6 +228,12 @@ namespace ProjetMMoMrBraux
                             if (Joueur != null)
                             {
                                 Joueur.Displays();
+                                Console.WriteLine("Veux-tu afficher les détails de ton arme ?");
+                                string ChoixD = Console.ReadLine();
+                                if (ChoixD == "oui" || ChoixD == "OUI" || ChoixD == "Oui" || ChoixD == "O")
+                                {
+                                    Joueur.afficherArme();
+                                }
                             }
                             else
                                 Console.WriteLine("Pas de personnage");                         
@@ -1373,40 +1379,96 @@ namespace ProjetMMoMrBraux
                             if (Joueur != null)
                             {
                                 Joueur.Displays();
+                                Console.WriteLine("Veux-tu afficher les détails de ton arme ?");
+                                string ChoixD = Console.ReadLine();
+                                if (ChoixD == "oui" || ChoixD == "OUI" || ChoixD == "Oui" || ChoixD == "O")
+                                {
+                                    Joueur.afficherArme();
+                                }
                             }
                             else
                                 Console.WriteLine("Pas d'autre personnage");
                             if (Joueur2 != null)
                             {
                                 Joueur2.Displays();
+                                if (Joueur2 != null)
+                                {
+                                    Console.WriteLine("Veux-tu afficher les détails de ton arme ?");
+                                    string ChoixD = Console.ReadLine();
+                                    if (ChoixD == "oui" || ChoixD == "OUI" || ChoixD == "Oui" || ChoixD == "O")
+                                    {
+                                        Joueur2.afficherArme();
+                                    }
+                                }
                             }
                             else
                                 Console.WriteLine("Pas d'autre personnage 2");
                             if (Joueur3 != null)
                             {
                                 Joueur3.Displays();
+                                if (Joueur3 != null)
+                                {
+                                    Console.WriteLine("Veux-tu afficher les détails de ton arme ?");
+                                    string ChoixD = Console.ReadLine();
+                                    if (ChoixD == "oui" || ChoixD == "OUI" || ChoixD == "Oui" || ChoixD == "O")
+                                    {
+                                        Joueur3.afficherArme();
+                                    }
+                                }
                             }
                             else
                                 Console.WriteLine("Pas d'autre personnage 3");
                             if (Joueur4 != null)
                             {
                                 Joueur4.Displays();
+                                if (Joueur4 != null)
+                                {
+                                    Console.WriteLine("Veux-tu afficher les détails de ton arme ?");
+                                    string ChoixD = Console.ReadLine();
+                                    if (ChoixD == "oui" || ChoixD == "OUI" || ChoixD == "Oui" || ChoixD == "O")
+                                    {
+                                        Joueur4.afficherArme();
+                                    }
+                                }
                             }
                             else
                                 Console.WriteLine("Pas d'autre personnage 4");
                             if  (Joueur5 != null)
                             {
                                 Joueur5.Displays();
+                          
+                                if(Joueur5 != null)
+                                {
+                                    Console.WriteLine("Veux-tu afficher les détails de ton arme ?");
+                                    string ChoixD = Console.ReadLine();
+                                    if (ChoixD == "oui" || ChoixD == "OUI" || ChoixD == "Oui" || ChoixD == "O")
+                                    {
+                                        Joueur5.afficherArme();
+                                    }
+                                }
+                          
                             }
                             else
                                 Console.WriteLine("Pas d'autre personnage 5");
                             if (Joueur6 != null)
                             {
                                 Joueur6.Displays();
+
+                                if (Joueur6 != null)
+                                {
+                                    Console.WriteLine("Veux-tu afficher les détails de ton arme ?");
+                                    string ChoixD = Console.ReadLine();
+                                    if (ChoixD == "oui" || ChoixD == "OUI" || ChoixD == "Oui" || ChoixD == "O")
+                                    {
+                                        Joueur6.afficherArme();
+                                    }
+                                }
+
                             }
                             else
                                 Console.WriteLine("Pas d'autre personnage 6");
                         }
+                  
                         break;
 
                     case "7":

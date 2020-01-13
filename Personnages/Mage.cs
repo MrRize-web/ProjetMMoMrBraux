@@ -22,7 +22,7 @@ namespace ProjetMMoMrBraux
             Console.WriteLine(" -->  Mana     : " + this.mana);
             Console.WriteLine(" -->  Agilité  : " + this.agilite);
             Console.WriteLine(" -->  Force    : " + this.force);
-            Console.WriteLine(" -->  Arme   : " + this.sortAcquis);
+            Console.WriteLine(" -->  Arme     : Baton de feu ");
             Console.WriteLine("|-----------------------------|" + "\n");
         }
         public Mage(string name) : base(name)
@@ -37,7 +37,7 @@ namespace ProjetMMoMrBraux
         public override void afficherArme()
         {
             Console.WriteLine("|--------Arme-----------------|");
-            Console.WriteLine("|--Nom : " + this.sortAcquis + "|");
+            Console.WriteLine("|--Nom : CHO CHO CACAO -------|");
             Console.WriteLine("|-----------------------------|" + "\n");
         }
         public override void afficherTeam()

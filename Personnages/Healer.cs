@@ -21,7 +21,7 @@ namespace ProjetMMoMrBraux
             Console.WriteLine(" -->  HP       : " + this.hpv);
             Console.WriteLine(" -->  Agilité  : " + this.agilite);
             Console.WriteLine(" -->  Force    : " + this.force);
-            Console.WriteLine(" -->  Arme     : " + this.sortAcquis);
+            Console.WriteLine(" -->  Arme     : Baton de la foret");
             Console.WriteLine("|-----------------------------|" + "\n");
         }
         public Healer(string name) : base(name)
@@ -52,9 +52,9 @@ namespace ProjetMMoMrBraux
         }
         public override void afficherArme()
         {
-            Console.WriteLine("|--------Arme-----------------|");
-            Console.WriteLine("|--Nom : " + this.sortAcquis + "|");
-            Console.WriteLine("|-----------------------------|" + "\n");
+            Console.WriteLine("|--------Arme-------------------------|");
+            Console.WriteLine("|--Nom : bou de bois trouver en foret-| ");
+            Console.WriteLine("|-------------------------------------|" + "\n");
         }
 
         public void AttaqueMagie(Magie magie)

@@ -29,7 +29,7 @@ namespace ProjetMMoMrBraux
             Console.WriteLine(" -->  HP       : " + this.hpv);
             Console.WriteLine(" -->  Agilité  : " + this.agilite);
             Console.WriteLine(" -->  Force    : " + this.force);
-            Console.WriteLine(" -->  Arme   : " + this.armePortee);
+            Console.WriteLine(" -->  Arme     : Aucune je sabate ");
             Console.WriteLine("|-----------------------------|" + "\n");
         }
         public override void afficherTeam()
@@ -42,7 +42,7 @@ namespace ProjetMMoMrBraux
         public override void afficherArme()
         {
             Console.WriteLine("|--------Arme-----------------|");
-            Console.WriteLine("|--Nom : " + this.armePortee+"|");
+            Console.WriteLine(" -->  Nom   : Donner des coups de Babooch ");
             Console.WriteLine("|-----------------------------|" + "\n");
         }
 

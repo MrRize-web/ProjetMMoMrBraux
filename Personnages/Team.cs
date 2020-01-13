@@ -4,6 +4,7 @@ using System.Text;
 
 namespace ProjetMMoMrBraux
 {
+    /////////////////////CLASSE TEST//////////////////////////
     class Team
     {
         protected SortedSet<Personnage> team;
