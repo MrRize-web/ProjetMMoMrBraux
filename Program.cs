@@ -1417,14 +1417,19 @@ namespace ProjetMMoMrBraux
                             Console.Clear();
                             Tournois tournoi = new Tournois();
                             //Console.WriteLine("Selection de l'arme du combatant 1 :");
-                            Barbare Combatant1 = new Barbare("j1");
+                            Barbare Combatant1 = new Barbare("Combattant 1  ");
+                            Console.WriteLine("Combatant Barbare 1 stats : ");
+                            Combatant1.Displays();
+                            Barbare Combatant2 = new Barbare("Combattant 2 ");
+                            Console.WriteLine("Combatant Barbare 2 stats : ");
+                            Combatant2.Displays();
                             //Joueur.afficherArme();
-                            //Console.WriteLine("Selection de l'arme du combatant 2 :");
-                            Barbare Combatant2 = new Barbare("j2");
+                            //Console.WriteLine("Selection de l'arme du combatant 2 :");                           
                             Console.WriteLine("Point de vie du combatant 1 :" + Combatant1.gethpv());
                             Console.WriteLine("Point de vie du combatant 2 :" + Combatant2.gethpv());
                             tournoi.accepterTournoi(Combatant1, Combatant2);
-                            Console.WriteLine("Point de vie du combatant 1 :"+ Combatant1.gethpv());          
+                            Console.WriteLine("Point de vie du combatant 1 : " + Combatant1.gethpv());
+                            Console.WriteLine("Point de vie du combatant 2 : " + Combatant2.gethpv());
 
                         }
                         break;
@@ -1438,10 +1443,15 @@ namespace ProjetMMoMrBraux
                             Console.Clear();
                             Tournois tournoi = new Tournois();
                             //Console.WriteLine("Selection de l'arme du combatant 1 :");
-                            Mage Combatant1 = new Mage("j1");
+                            Mage Combatant1 = new Mage("Combattant 1 ");
+                            Console.WriteLine("Combatant Mage 1 stats : ");
+                            Combatant1.Displays();
+                            Mage Combatant2 = new Mage("Combattant 2 ");
+                            Console.WriteLine("Combatant  Mage 2 stats : ");
+                            Combatant2.Displays();
                             //Joueur.afficherArme();
                             //Console.WriteLine("Selection de l'arme du combatant 2 :");
-                            Mage Combatant2 = new Mage("j2");
+
                             Console.WriteLine("Point de vie du combatant 1 :" + Combatant1.gethpv());
                             Console.WriteLine("Point de vie du combatant 2 :" + Combatant2.gethpv());
                             tournoi.accepterTournoi(Combatant1, Combatant2);
@@ -1460,10 +1470,15 @@ namespace ProjetMMoMrBraux
                             Console.Clear();
                             Tournois tournoi = new Tournois();
                             //Console.WriteLine("Selection de l'arme du combatant 1 :");
-                            Rogue Combatant1 = new Rogue("j1");
+                            Rogue Combatant1 = new Rogue("Combattant 1 ");
+                            Console.WriteLine("Combatant  Rogue 2 stats : ");
+                            Combatant1.Displays();
+                            Rogue Combatant2 = new Rogue("Combattant 2 ");
+                            Console.WriteLine("Combatant  Rogue 2 stats : ");
+                            Combatant2.Displays();
                             //Joueur.afficherArme();
                             //Console.WriteLine("Selection de l'arme du combatant 2 :");
-                            Rogue Combatant2 = new Rogue("j2");
+
                             Console.WriteLine("Point de vie du combatant 1 :" + Combatant1.gethpv());
                             Console.WriteLine("Point de vie du combatant 2 :" + Combatant2.gethpv());
                             tournoi.accepterTournoi(Combatant1, Combatant2);
@@ -1483,10 +1498,15 @@ namespace ProjetMMoMrBraux
                             Console.Clear();
                             Tournois tournoi = new Tournois();
                             //Console.WriteLine("Selection de l'arme du combatant 1 :");
-                            Healer Combatant1 = new Healer("j1");
+                            Healer Combatant1 = new Healer("Combattant 1 ");
+                            Console.WriteLine("Combatant  Healer 2 stats : ");
+                            Combatant1.Displays();
+                            Healer Combatant2 = new Healer("Combattant 2 ");
+                            Console.WriteLine("Combatant  Healer 2 stats : ");
+                            Combatant2.Displays();
                             //Joueur.afficherArme();
                             //Console.WriteLine("Selection de l'arme du combatant 2 :");
-                            Healer Combatant2 = new Healer("j2");
+
                             Console.WriteLine("Point de vie du combatant 1 :" + Combatant1.gethpv());
                             Console.WriteLine("Point de vie du combatant 2 :" + Combatant2.gethpv());
                             tournoi.accepterTournoi(Combatant1, Combatant2);
@@ -1497,18 +1517,34 @@ namespace ProjetMMoMrBraux
                         break;
 
                     case "11":
-                        Console.WriteLine("Voulez-vous rejoindre un Tournois de Combattant Arme (oui ou non)");
+                        Console.WriteLine("Voulez-vous rejoindre un Tournois de Combattant Arme Barbare vs Rogue (oui ou non)");
                         string Choix12 = Console.ReadLine();
                         if (Choix12 == "oui" || Choix12 == "OUI" || Choix12 == "Oui" || Choix12 == "O")
                         {
+                            if (Joueur == null || Joueur2 == null)
+                            {
+                                if( Joueur == null)
+                                {
+                                    Console.WriteLine("Pas de personnage 1 !!");
+                                }
+                                else if(Joueur2 == null){
+                                    Console.WriteLine("Pas de personnage 2 !!");
+                                }
+                              
+                                Console.WriteLine("Veuillez composer le slot 3 et 4 de votre team de Mage ou Healer !!");
+                                break;
+                            }
 
                             Console.Clear();
-
+                            Console.WriteLine("Combatant  "+Joueur+" stats : ");
+                            Joueur.Displays();
+                            Console.WriteLine("Combatant  " + Joueur2 + " stats : ");
+                            Joueur2.Displays();
                             Tournoi tournoi1 = new Tournoi(Joueur, Joueur2);
-                            Console.WriteLine("////////////Tounois Magie/////////////");
+                            Console.WriteLine("////////////Tounois Arme/////////////");
                             Console.WriteLine("Point de vie du combatant 1 :" + Joueur.gethpv());
                             Console.WriteLine("Point de vie du combatant 2 :" + Joueur2.gethpv());
-                            tournoi1.accepterTournoiMagie();
+                            tournoi1.accepterTournoiArme();
                             Console.WriteLine("Point de vie du combatant 1 :" + Joueur.gethpv());
                             Console.WriteLine("Point de vie du combatant 2 :" + Joueur2.gethpv());
 
@@ -1519,9 +1555,25 @@ namespace ProjetMMoMrBraux
                         string Choix13 = Console.ReadLine();
                         if (Choix13 == "oui" || Choix13 == "OUI" || Choix13 == "Oui" || Choix13 == "O")
                         {
-
+                            if (Joueur3 == null || Joueur4 == null)
+                            {
+                                if (Joueur3 == null)
+                                {
+                                    Console.WriteLine("Pas de personnage 1 !!");
+                                }
+                                else if (Joueur4 == null)
+                                {
+                                    Console.WriteLine("Pas de personnage 2 !!");
+                                }
+                                Console.WriteLine("Veuillez composer le slot 2  team de Rogue ou Barbare !!");
+                                break;
+                            }
                             Console.Clear();
-                            Tournoi tournoi1 = new Tournoi(Joueur, Joueur2);
+                            Tournoi tournoi1 = new Tournoi(Joueur3, Joueur4);
+                            Console.WriteLine("Combatant  " + Joueur3 + " stats : ");
+                            Joueur3.Displays();
+                            Console.WriteLine("Combatant  " + Joueur4 + " stats : ");
+                            Joueur4.Displays();
                             Console.WriteLine("////////////Tounois Magie/////////////");
                             Console.WriteLine("Point de vie du combatant 1 :" + Joueur.gethpv());
                             Console.WriteLine("Point de vie du combatant 2 :" + Joueur2.gethpv());

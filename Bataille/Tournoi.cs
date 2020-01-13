@@ -106,8 +106,6 @@ namespace ProjetMMoMrBraux.Bataille
                                 jouer--;
                                 Console.ReadLine();
                             }
-
-
                         }
                     }
                     else

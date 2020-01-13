@@ -11,14 +11,30 @@ namespace ProjetMMoMrBraux
             {
                 if (turn == 1)
                 {
+                    Console.WriteLine("Le joueur 2 attaque !");
                     Personnage cible = Joueur2 as Personnage;
-                    Joueur.attaqueSpecialeArme(cible);
+                    int vieAvant = cible.gethpv();
+                    Joueur.attaqueSpecialeArme(cible);               
+                    int vieApres = cible.gethpv();
+                    int degats = vieAvant - vieApres;
+                    Console.WriteLine("Le joueur 2 a subi " + degats + "points de dégats");
+                    Console.WriteLine("PV du joueur 2 : " + cible.gethpv());
+                    Console.ReadLine();
+                    degats = 0;
                     turn++;
                 }
                 else if (turn == 2)
                 {
+                    Console.WriteLine("Le joueur 1 attaque !");
                     Personnage cible = Joueur as Personnage;
+                    int vieAvant = cible.gethpv();
                     Joueur2.attaqueSpecialeArme(cible);
+                    int vieApres = cible.gethpv();
+                    int degats = vieAvant - vieApres;
+                    Console.WriteLine("Le joueur 2 a subi " + degats + "points de dégats");
+                    Console.WriteLine("PV du joueur 2 : " + cible.gethpv());
+                    Console.ReadLine();
+                    degats = 0;
                     turn--;
                 }
                 try
@@ -47,14 +63,30 @@ namespace ProjetMMoMrBraux
             {
                 if (turn == 1)
                 {
+                    Console.WriteLine("Le joueur 2 attaque !");
                     Personnage cible = Joueur2 as Personnage;
+                    int vieAvant = cible.gethpv();
                     Joueur.attaqueSpecialeMagie(cible);
+                    int vieApres = cible.gethpv();
+                    int degats = vieAvant - vieApres;
+                    Console.WriteLine("Le joueur 2 a subi " + degats + "points de dégats");
+                    Console.WriteLine("PV du joueur 2 : " + cible.gethpv());
+                    Console.ReadLine();
+                    degats = 0;
                     turn++;
                 }
                 else if (turn == 2)
                 {
+                    Console.WriteLine("Le joueur 1 attaque !");
                     Personnage cible = Joueur as Personnage;
+                    int vieAvant = cible.gethpv();
                     Joueur2.attaqueSpecialeMagie(cible);
+                    int vieApres = cible.gethpv();
+                    int degats = vieAvant - vieApres;
+                    Console.WriteLine("Le joueur 2 a subi " + degats + "points de dégats");
+                    Console.WriteLine("PV du joueur 2 : " + cible.gethpv());
+                    Console.ReadLine();
+                    degats = 0;
                     turn--;
                 }
                 try
